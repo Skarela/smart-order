@@ -1,0 +1,6 @@
+**/*.user
+*.user
+*.suo
+packages/
+siteSmartOrder/bin/
+siteSmartOrder/obj/

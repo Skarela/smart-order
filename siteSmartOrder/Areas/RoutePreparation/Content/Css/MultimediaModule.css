@@ -1,0 +1,128 @@
+﻿multimedia .error-message
+{
+    font-size: 12px;
+    color: #ff0000; 
+    display: none;
+    margin: 0;   
+}
+
+multimedia #multimediaModal
+{            
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    width: 75%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+multimedia #multimediaModal .modal-body
+{
+    overflow-y: auto !important;
+}
+
+multimedia #multimediaModal .error-message
+{           
+    float: left;
+}
+
+multimedia #multimediaModal .multimedias
+{
+    list-style: none; 
+    margin: 0;  
+}
+
+multimedia #multimediaModal .multimedias .multimedia
+{
+    position: relative;
+    border: 1px solid #eeeeee;
+    float: left;
+    width: 12%;
+    margin: 1%;
+    height: 150px;
+    overflow: hidden;
+}
+
+multimedia #multimediaModal .multimedias .multimedia a
+{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #000000;
+    padding: 10px;
+    height: 100%;
+}
+
+multimedia #multimediaModal .multimedias .multimedia a:hover
+{
+    background-color: #08c;    
+}
+
+multimedia #multimediaModal .multimedias .multimedia a p
+{
+    margin-bottom: 0;
+    margin-top: 10px;
+}
+
+multimedia #multimediaModal .multimedias .multimedia .remove-button
+{
+    position: absolute;
+    top: 0;
+    right: 8px;
+    background-color: transparent;   
+    border: none;
+    font-size: 24px;
+    padding: 0;
+    color: #000;
+    opacity: .5; 
+}
+
+multimedia #multimediaModal .multimedias .multimedia .remove-button:hover
+{
+    opacity: 1; 
+}
+
+multimedia #multimediaModal .multimedias .multimedia input[type="checkbox"]
+{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    margin: 0;    
+    -webkit-transform: scale(2);
+    -ms-transform: scale(2);
+    transform: scale(2);
+}
+
+#multimediaLightBox
+{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: #000000;
+    z-index: 99999;
+}
+
+#multimediaLightBox .media-element
+{    
+    max-width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+
+#multimediaLightBox .close
+{
+    color: #ffffff;    
+    opacity: 0.35;
+    font-size: 72px;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    line-height: 72px;    
+}

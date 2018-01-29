@@ -1,0 +1,1551 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8B285967-AC21-4EA6-AFB5-B9A7FCCC2CF8}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>siteSmartOrder</RootNamespace>
+    <AssemblyName>siteSmartOrder</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>AllFilesInTheProject</FilesToIncludeForPublish>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.0.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.0.2\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ExcelDataReader, Version=3.3.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.3.3.0\lib\net45\ExcelDataReader.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ExcelDataReader.DataSet, Version=3.3.0.0, Culture=neutral, PublicKeyToken=93517dbe6a4012fa, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExcelDataReader.DataSet.3.3.0\lib\net45\ExcelDataReader.DataSet.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WebForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="QROpeSystems">
+      <HintPath>Infrastructure\Libreries\QROpeSystems.dll</HintPath>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\RestSharp.105.2.2\lib\net45\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SimpleInjector, Version=3.3.2.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.3.3.2\lib\net45\SimpleInjector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SimpleInjector.Integration.Web, Version=3.3.2.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.Integration.Web.3.3.2\lib\net40\SimpleInjector.Integration.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SimpleInjector.Integration.Web.Mvc, Version=3.3.2.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleInjector.Integration.Web.Mvc.3.3.2\lib\net40\SimpleInjector.Integration.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Threading.Tasks">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.2\Facades\System.Threading.Tasks.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Data\MyMembershipProvider.cs" />
+    <Compile Include="Areas\CustomerData\Controllers\BranchController.cs" />
+    <Compile Include="Areas\CustomerData\Controllers\CustomerController.cs" />
+    <Compile Include="Areas\CustomerData\CustomerDataRegistration.cs" />
+    <Compile Include="Areas\CustomerData\Interfaces\IBranchRepository.cs" />
+    <Compile Include="Areas\CustomerData\Interfaces\ICustomerRepository.cs" />
+    <Compile Include="Areas\CustomerData\Interfaces\IRouteRepository.cs" />
+    <Compile Include="Areas\CustomerData\Models\Branch.cs" />
+    <Compile Include="Areas\CustomerData\Models\ChangeStatusResponse.cs" />
+    <Compile Include="Areas\CustomerData\Models\Customer.cs" />
+    <Compile Include="Areas\CustomerData\Models\Route.cs" />
+    <Compile Include="Areas\CustomerData\Repositories\BranchRepository.cs" />
+    <Compile Include="Areas\CustomerData\Repositories\CustomerRepository.cs" />
+    <Compile Include="Areas\CustomerData\Repositories\RouteRepository.cs" />
+    <Compile Include="Areas\NoticeRecharge\Controllers\BranchController.cs" />
+    <Compile Include="Areas\CustomerData\Controllers\RouteController.cs" />
+    <Compile Include="Areas\NoticeRecharge\Controllers\UserController.cs" />
+    <Compile Include="Areas\NoticeRecharge\Interfaces\IBranchRepository.cs" />
+    <Compile Include="Areas\NoticeRecharge\Interfaces\IRouteRepository.cs" />
+    <Compile Include="Areas\NoticeRecharge\Interfaces\IUserRepository.cs" />
+    <Compile Include="Areas\NoticeRecharge\Models\Branch.cs" />
+    <Compile Include="Areas\NoticeRecharge\Models\Route.cs" />
+    <Compile Include="Areas\NoticeRecharge\Models\User.cs" />
+    <Compile Include="Areas\NoticeRecharge\Models\ViewModel.cs" />
+    <Compile Include="Areas\NoticeRecharge\NoticeRechargeRegistration.cs" />
+    <Compile Include="Areas\NoticeRecharge\Repositories\BranchRepository.cs" />
+    <Compile Include="Areas\NoticeRecharge\Repositories\RouteRepository.cs" />
+    <Compile Include="Areas\NoticeRecharge\Repositories\UserRepository.cs" />
+    <Compile Include="Areas\RoutePreparation\Controllers\AlertConfigurationController.cs" />
+    <Compile Include="Areas\RoutePreparation\Controllers\AlertController.cs" />
+    <Compile Include="Areas\RoutePreparation\Controllers\ApplyAssignedSurveyController.cs" />
+    <Compile Include="Areas\RoutePreparation\Controllers\CampaignTemplateController.cs" />
+    <Compile Include="Areas\RoutePreparation\Controllers\ChecklistController.cs" />
+    <Compile Include="Areas\RoutePreparation\Controllers\BranchController.cs" />
+    <Compile Include="Areas\RoutePreparation\Controllers\CampaignReplyController.cs" />
+    <Compile Include="Areas\RoutePreparation\Controllers\ChecklistReplyController.cs" />
+    <Compile Include="Areas\RoutePreparation\Controllers\CheckListTemplateController.cs" />
+    <Compile Include="Areas\RoutePreparation\Controllers\CoolerConfigurationReplyMultimediaController.cs" />
+    <Compile Include="Areas\RoutePreparation\Controllers\CoolerConfigurationTemplateController.cs" />
+    <Compile Include="Areas\RoutePreparation\Controllers\NewCoolerMultimediaController.cs" />
+    <Compile Include="Areas\RoutePreparation\Controllers\SystemController.cs" />
+    <Compile Include="Areas\RoutePreparation\Controllers\EvidenceMultimediaController.cs" />
+    <Compile Include="Areas\RoutePreparation\Controllers\WorkshopReplyMultimediaController.cs" />
+    <Compile Include="Areas\RoutePreparation\Controllers\SosAlertController.cs" />
+    <Compile Include="Areas\RoutePreparation\Controllers\ManagerController.cs" />
+    <Compile Include="Areas\RoutePreparation\Controllers\IncidentController.cs" />
+    <Compile Include="Areas\RoutePreparation\Controllers\IncidenceController.cs" />
+    <Compile Include="Areas\RoutePreparation\Controllers\ContactController.cs" />
+    <Compile Include="Areas\RoutePreparation\Controllers\CoolerConfigurationController.cs" />
+    <Compile Include="Areas\RoutePreparation\Controllers\CoolerConfigurationReplyController.cs" />
+    <Compile Include="Areas\RoutePreparation\Controllers\CoolerController.cs" />
+    <Compile Include="Areas\RoutePreparation\Controllers\CustomerController.cs" />
+    <Compile Include="Areas\RoutePreparation\Controllers\NewCoolerController.cs" />
+    <Compile Include="Areas\RoutePreparation\Controllers\UserPortalController.cs" />
+    <Compile Include="Areas\RoutePreparation\Controllers\WorkshopReplyController.cs" />
+    <Compile Include="Areas\RoutePreparation\Controllers\UserController.cs" />
+    <Compile Include="Areas\RoutePreparation\Controllers\RouteController.cs" />
+    <Compile Include="Areas\RoutePreparation\Controllers\SurveyController.cs" />
+    <Compile Include="Areas\RoutePreparation\Controllers\UnitController.cs" />
+    <Compile Include="Areas\RoutePreparation\Controllers\WorkshopController.cs" />
+    <Compile Include="Areas\RoutePreparation\Controllers\MechanicController.cs" />
+    <Compile Include="Areas\RoutePreparation\Controllers\CampaignController.cs" />
+    <Compile Include="Areas\RoutePreparation\Enums\CampaignMultimediaType.cs" />
+    <Compile Include="Areas\RoutePreparation\Enums\CategoryType.cs" />
+    <Compile Include="Areas\RoutePreparation\Enums\AlertType.cs" />
+    <Compile Include="Areas\RoutePreparation\Enums\ErrorType.cs" />
+    <Compile Include="Areas\RoutePreparation\Enums\DichotomyType.cs" />
+    <Compile Include="Areas\RoutePreparation\Enums\QuestionType.cs" />
+    <Compile Include="Areas\RoutePreparation\Enums\SurveyStatus.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Alert.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\AlertConfiguration.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\BaseResponses\CreationResponse.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\BaseResponses\Enumerator.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\BaseResponses\ExceptionResponse.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\BaseResponses\FileResponse.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\BaseResponses\SuccessResponse.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\BranchToApply.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\CampaignMultimedia.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Checklist.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Branch.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\CampaignReply.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\ChecklistReply.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Contact.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Cooler.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\CoolerConfiguration.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\CoolerConfigurationReply.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Alerts.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\AlertsComment.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\AlertContact.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\CoolerConfigurationReplyMultimedia.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Dtos\Requests\CampaignDatesRequest.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Filters\NewCoolerMultimediaFilter.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Filters\UserRouteFilter.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\NewCoolerMultimedia.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\EvidenceMultimedia.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Filters\CoolerConfigurationReplyMultimediaFilter.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Filters\EvidenceMultimediaFilter.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Filters\IncidentFilter.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Filters\WorkshopReplyMultimediaFilter.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Pages\CoolerConfigurationReplyMultimediaPage.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Pages\NewCoolerMultimediaPage.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Pages\EvidenceMultimediaPage.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Pages\UserRoutePage.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Pages\WorkshopReplyMultimediaPage.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\UserRoute.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Surveys\Mappers\SurveyMapper.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Dtos\SuccessMessage.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\ViewModels\DatesBulkUpdateModel.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\ViewModels\TemplateCampaignViewModel.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\ViewModels\TemplateViewModel.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\WorkshopReplyMultimedia.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Multimedia.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Filters\SosAlertFilter.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Incident.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Filters\ManagerFilter.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Manager.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Customer.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Filters\AlertConfigurationFilter.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Filters\AlertFilter.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Filters\CampaignMultimediaFilter.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Filters\IncidenceFilter.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Filters\UserPortalFilter.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Incidence.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Pages\CampaignMultimediaPage.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Pages\MultimediaPage.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Pages\SosAlertPage.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Pages\IncidentPage.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Pages\ManagerPage.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Pages\IncidencePage.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Filters\ContactFilter.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Filters\CoolerConfigurationFilter.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Filters\CoolerConfigurationReplyFilter.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Filters\CoolerFilter.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Filters\CustomerFilter.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Filters\NewCoolerFilter.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\NewCooler.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Pages\AlertConfigurationPage.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Pages\AlertPage.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Pages\ContactPage.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Pages\CoolerConfigurationPage.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Pages\CoolerConfigurationReplyPage.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Pages\CoolerPage.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Pages\CustomerPage.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Pages\NewCoolerPage.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Pages\UserPortalPage.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Sessions\BranchSession.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Surveys\ApplyAsignedSurvey.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Surveys\ApplyAsignedSurveyFlat.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Surveys\AsignedSurvey.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Surveys\AsignedSurveyFlat.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Surveys\AsignedSurveyResult.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Surveys\AssignedSurveyResultImage.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Surveys\Pages\ApplyAssignedSurveyFlatPage.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Surveys\Pages\ApplyAssignedSurveyPage.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Surveys\Reponses\AppliedSurveyResponse.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Surveys\Reponses\AssignedSurveysToExportResponse.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Surveys\Requests\ApplyAssignedSurveyIdsRequest.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Surveys\Requests\SurveyRequest.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\UserPortal.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Filters\WorkshopReplyFilter.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Pages\WorkshopReplyPage.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Surveys\Pages\SurveyFlatPage.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Surveys\SurveyFlat.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\WorkshopReply.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Filters\CampaignReplyFilter.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Filters\ChecklistReplyFilter.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Filters\UserFilter.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Pages\CampaignReplyPage.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Pages\ChecklistReplyPage.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Pages\UserPage.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\User.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Filters\BranchFilter.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Filters\RouteFilter.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Filters\UnitFilter.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Pages\BranchPage.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Pages\RoutePage.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Pages\UnitPage.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Unit.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Filters\WorkshopFilter.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Pages\WorkshopPage.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Workshop.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Filters\CheckListFilter.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Filters\MechanicFilter.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Mechanic.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Filters\CampaignFilter.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Filters\Filter.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Pages\CampaignPage.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Campaign.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Pages\ChecklistPage.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Pages\MechanicPage.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Pages\Page.cs" />
+    <Compile Include="Areas\RoutePreparation\Resolvers\CampaignMultimediaTypeResolver.cs" />
+    <Compile Include="Areas\RoutePreparation\Resolvers\SosAlertStatusResolver.cs" />
+    <Compile Include="Areas\RoutePreparation\Resolvers\TypeResolver.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\AlertConfigurationService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\AlertService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\CheckListService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\BranchService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\CampaignReplyService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\ChecklistReplyService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\ApplyAssignedSurveyService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\CampaignMultimediaService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\CoolerConfigurationReplyMultimediaService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\NewCoolerMultimediaService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\EvidenceMultimediaService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\Interfaces\INewCoolerMultimediaService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\Interfaces\IEvidenceMultimediaService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\Interfaces\ICoolerConfigurationReplyMultimediaService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\WorkshopReplyMultimediaService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\Interfaces\IWorkShopReplyMultimediaService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\SosAlertService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\Interfaces\ISosAlertService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\ManagerService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\IncidentService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\IncidenceService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\Interfaces\IManagerService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\Interfaces\IIncidentService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\Interfaces\IIncidenceService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\AssignedSurveyService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\ContactService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\CoolerConfigurationReplyService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\CoolerConfigurationService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\CoolerService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\CustomerService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\Interfaces\IAlertConfigurationService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\Interfaces\IAlertService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\Interfaces\IAssignedSurveyService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\Interfaces\ICampaignMultimediaService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\Interfaces\IApplyAssignedSurveyService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\Interfaces\IContactService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\Interfaces\ICoolerConfigurationReplyService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\Interfaces\ICoolerConfigurationService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\Interfaces\ICoolerService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\Interfaces\ICustomerService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\Interfaces\INewCoolerService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\NewCoolerService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\UserportalService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\Interfaces\IUserPortalService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\WorkshopReplyService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\Interfaces\IWorkshopReplyService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\Interfaces\IChecklistReplyService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\Interfaces\ICampaignReplyService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\UserService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\Interfaces\IUserService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\RouteService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\Interfaces\IRouteService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\Interfaces\IBranchService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\UnitService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\Interfaces\IUnitService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\WorkshopService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\Interfaces\IWorkShopService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\Interfaces\ICheckListService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\MechanicService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\Interfaces\IMechanicService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\Interfaces\ICampaignService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\CampaignService.cs" />
+    <Compile Include="Areas\RoutePreparation\RoutePreparationAreaRegistration.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Files\File.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Route.cs" />
+    <Compile Include="Content\Descargas.ashx.cs">
+      <DependentUpon>Descargas.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Content\QRCobratario.ashx.cs">
+      <DependentUpon>QRCobratario.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AuditController.cs" />
+    <Compile Include="Controllers\AuthorizeCustom.cs" />
+    <Compile Include="Controllers\CatalogoController.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
+    <Compile Include="Controllers\ConfiguracionController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JornadaController.cs" />
+    <Compile Include="Controllers\KilometrajeController.cs" />
+    <Compile Include="Controllers\PrecioController.cs" />
+    <Compile Include="Controllers\ProcesosController.cs" />
+    <Compile Include="Controllers\ProductoController.cs" />
+    <Compile Include="Controllers\ReferenciaEntregaController.cs" />
+    <Compile Include="Controllers\ReporteController.cs" />
+    <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Enums\Alert.cs" />
+    <Compile Include="Infrastructure\Enums\ExcelHeaders.cs" />
+    <Compile Include="Infrastructure\Exceptions\InvalidDateException.cs" />
+    <Compile Include="Infrastructure\Exceptions\TheoreticalMileage\DataLengthException.cs" />
+    <Compile Include="Infrastructure\Exceptions\TheoreticalMileage\ExcelHeaderException.cs" />
+    <Compile Include="Infrastructure\Extensions\EnumExtensions.cs" />
+    <Compile Include="Infrastructure\Extensions\ExportExtensions.cs" />
+    <Compile Include="Infrastructure\Factories\AlertFactory.cs" />
+    <Compile Include="Infrastructure\Factories\Interfaces\IAlertFactory.cs" />
+    <Compile Include="Infrastructure\Factories\Interfaces\IJsonFactory.cs" />
+    <Compile Include="Infrastructure\Factories\JsonFactory.cs" />
+    <Compile Include="Infrastructure\Helpers\AlertHelper.cs" />
+    <Compile Include="Infrastructure\Helpers\ButtonHelper.cs" />
+    <Compile Include="Infrastructure\Helpers\MapHelper.cs" />
+    <Compile Include="Infrastructure\Helpers\TableHelper.cs" />
+    <Compile Include="Infrastructure\Settings\SessionSettings.cs" />
+    <Compile Include="Infrastructure\SimpleInjector\SimpleInjectorConfig.cs" />
+    <Compile Include="Infrastructure\Tools\IClient.cs" />
+    <Compile Include="Infrastructure\Tools\MileageRegex.cs" />
+    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\Audit\Asset.cs" />
+    <Compile Include="Models\Audit\Audit.cs" />
+    <Compile Include="Models\Audit\AuditActiveCampaigns.cs" />
+    <Compile Include="Models\Audit\AuditsByCustomer.cs" />
+    <Compile Include="Models\Audit\AuditsContainer.cs" />
+    <Compile Include="Models\Audit\Customer.cs" />
+    <Compile Include="Models\Audit\ErrorResponse.cs" />
+    <Compile Include="Models\Audit\JTableUserModel.cs" />
+    <Compile Include="Models\Audit\UserToAuditCampaignContainer.cs" />
+    <Compile Include="Models\Audit\CreateAuditCampaignResponse.cs" />
+    <Compile Include="Models\Audit\ExtendAuditCampaign.cs" />
+    <Compile Include="Models\Audit\CreateAuditCampaign.cs" />
+    <Compile Include="Models\Audit\UserToAuditCampaign.cs" />
+    <Compile Include="Models\Audit\AuditCampaignContainer.cs" />
+    <Compile Include="Models\Audit\Constants.cs" />
+    <Compile Include="Models\Audit\SuccessResponse.cs" />
+    <Compile Include="Models\Audit\AuditCampaign.cs" />
+    <Compile Include="Models\Audit\JTableAuditModel.cs" />
+    <Compile Include="Models\Audit\StatusPercent.cs" />
+    <Compile Include="Models\Audit\UserToAudit.cs" />
+    <Compile Include="Models\Branch.cs" />
+    <Compile Include="Models\Closure.cs" />
+    <Compile Include="Models\Customer.cs" />
+    <Compile Include="Models\BackupFile.cs" />
+    <Compile Include="Models\FileInputPackage.cs" />
+    <Compile Include="Models\InputResponse.cs" />
+    <Compile Include="Models\Mileage.cs" />
+    <Compile Include="Models\MultipartParser.cs" />
+    <Compile Include="Models\PriceList.cs" />
+    <Compile Include="Models\PriceListDetail.cs" />
+    <Compile Include="Models\Process.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\Report.cs" />
+    <Compile Include="Models\Response.cs" />
+    <Compile Include="Models\SmtpSetting.cs" />
+    <Compile Include="Models\TableObject.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserPortal.cs" />
+    <Compile Include="Models\ViewModel\ClosureViewModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ConcentrateOrdersReport.aspx.cs">
+      <DependentUpon>ConcentrateOrdersReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ConcentrateOrdersReport.aspx.designer.cs">
+      <DependentUpon>ConcentrateOrdersReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ConcentrateSalesReport.aspx.cs">
+      <DependentUpon>ConcentrateSalesReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ConcentrateSalesReport.aspx.designer.cs">
+      <DependentUpon>ConcentrateSalesReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\CustomerBinnacleFailed.aspx.cs">
+      <DependentUpon>CustomerBinnacleFailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\CustomerBinnacleFailed.aspx.designer.cs">
+      <DependentUpon>CustomerBinnacleFailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\CustomerScannedReport.aspx.cs">
+      <DependentUpon>CustomerScannedReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\CustomerScannedReport.aspx.designer.cs">
+      <DependentUpon>CustomerScannedReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ConcentrateDeliveryReport.aspx.cs">
+      <DependentUpon>ConcentrateDeliveryReport.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ConcentrateDeliveryReport.aspx.designer.cs">
+      <DependentUpon>ConcentrateDeliveryReport.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\ConcentrateProductivity.aspx.cs">
+      <DependentUpon>ConcentrateProductivity.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\ConcentrateProductivity.aspx.designer.cs">
+      <DependentUpon>ConcentrateProductivity.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\PriceList.aspx.cs">
+      <DependentUpon>PriceList.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\PriceList.aspx.designer.cs">
+      <DependentUpon>PriceList.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Report.aspx.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\Report.aspx.designer.cs">
+      <DependentUpon>Report.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\StockBasedDelivery.aspx.cs">
+      <DependentUpon>StockBasedDelivery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\StockBasedDelivery.aspx.designer.cs">
+      <DependentUpon>StockBasedDelivery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\StockProduct.aspx.cs">
+      <DependentUpon>StockProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\StockProduct.aspx.designer.cs">
+      <DependentUpon>StockProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\WorkLoadUser.aspx.cs">
+      <DependentUpon>WorkLoadUser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Reports\WorkLoadUser.aspx.designer.cs">
+      <DependentUpon>WorkLoadUser.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Infrastructure\Settings\AppSettings.cs" />
+    <Compile Include="Infrastructure\Exceptions\BadRequestException.cs" />
+    <Compile Include="Infrastructure\Exceptions\ExpectationFailedException.cs" />
+    <Compile Include="Infrastructure\Exceptions\ForbiddenException.cs" />
+    <Compile Include="Infrastructure\Exceptions\InternalServerException.cs" />
+    <Compile Include="Infrastructure\Exceptions\MethodNotAllowedException.cs" />
+    <Compile Include="Infrastructure\Exceptions\NotFoundException.cs" />
+    <Compile Include="Infrastructure\Exceptions\PreconditionFailedException.cs" />
+    <Compile Include="Infrastructure\Exceptions\ServerNotFoundException.cs" />
+    <Compile Include="Infrastructure\Extensions\CollectionExtensions.cs" />
+    <Compile Include="Infrastructure\Extensions\DateTimeExtensions.cs" />
+    <Compile Include="Infrastructure\Extensions\DoubleExtensions.cs" />
+    <Compile Include="Infrastructure\Extensions\IntegerExtensions.cs" />
+    <Compile Include="Infrastructure\Extensions\ObjectExtensions.cs" />
+    <Compile Include="Infrastructure\Extensions\StringExtensions.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Surveys\Category.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Surveys\Answer.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Surveys\AnswerImage.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Surveys\Pages\SurveyPage.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Surveys\Filters\SurveyFilter.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Surveys\QuestionImage.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Surveys\Question.cs" />
+    <Compile Include="Areas\RoutePreparation\Models\Surveys\Survey.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\Interfaces\ISurveyService.cs" />
+    <Compile Include="Areas\RoutePreparation\Services\SurveyService.cs" />
+    <Compile Include="Infrastructure\Tools\Client.cs" />
+    <Compile Include="Infrastructure\Tools\ClientValidate.cs" />
+    <Compile Include="Infrastructure\SimpleInjector\SimpleInjectorModule.cs" />
+    <Compile Include="Util\BootstrapHelper.cs" />
+    <Compile Include="Util\RenderHelper.cs" />
+    <Compile Include="Views\Configuracion\Kilometraje.aspx.cs">
+      <DependentUpon>Kilometraje.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Configuracion\Kilometraje.aspx.designer.cs">
+      <DependentUpon>Kilometraje.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Kilometraje\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Kilometraje\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\CustomerData\Content\bootstrap-3.3.6\css\bootstrap-theme.css" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-3.3.6\css\bootstrap-theme.min.css" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-3.3.6\css\bootstrap.css" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-3.3.6\css\bootstrap.min.css" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-3.3.6\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-3.3.6\js\alert.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-3.3.6\js\bootstrap-phone.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-3.3.6\js\bootstrap.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-3.3.6\js\bootstrap.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-3.3.6\js\dropdown.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-3.3.6\js\npm.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\css\bootstrap-table.css" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\css\bootstrap-table.min.css" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\bootstrap-table-locale-all.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\bootstrap-table-locale-all.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\bootstrap-table.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\bootstrap-table.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-af-ZA.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-af-ZA.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-ar-SA.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-ar-SA.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-ca-ES.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-ca-ES.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-cs-CZ.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-cs-CZ.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-da-DK.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-da-DK.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-de-DE.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-de-DE.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-el-GR.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-el-GR.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-en-US.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-en-US.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-es-AR.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-es-AR.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-es-CR.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-es-CR.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-es-ES.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-es-ES.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-es-MX.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-es-MX.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-es-NI.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-es-NI.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-es-SP.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-es-SP.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-et-EE.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-et-EE.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-fa-IR.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-fa-IR.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-fr-BE.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-fr-BE.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-fr-FR.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-fr-FR.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-he-IL.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-he-IL.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-hr-HR.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-hr-HR.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-hu-HU.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-hu-HU.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-it-IT.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-it-IT.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-ja-JP.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-ja-JP.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-ka-GE.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-ka-GE.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-ko-KR.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-ko-KR.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-ms-MY.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-ms-MY.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-nb-NO.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-nb-NO.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-nl-NL.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-nl-NL.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-pl-PL.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-pl-PL.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-pt-BR.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-pt-BR.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-pt-PT.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-pt-PT.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-ro-RO.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-ro-RO.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-ru-RU.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-ru-RU.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-sk-SK.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-sk-SK.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-sv-SE.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-sv-SE.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-th-TH.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-th-TH.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-tr-TR.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-tr-TR.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-uk-UA.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-uk-UA.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-ur-PK.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-ur-PK.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-vi-VN.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-vi-VN.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-zh-CN.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-zh-CN.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-zh-TW.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-table\js\locale\bootstrap-table-zh-TW.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-validator\css\bootstrapValidator.min.css" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-validator\js\bootstrapValidator.min.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-validator\js\validator.js" />
+    <Content Include="Areas\CustomerData\Content\bootstrap-validator\js\validator.min.js" />
+    <Content Include="Areas\CustomerData\Content\css\Custom.css" />
+    <Content Include="Areas\CustomerData\Content\js\jquery-1.11.3.min.js" />
+    <Content Include="Areas\CustomerData\Content\selectize\css\normalize.css" />
+    <Content Include="Areas\CustomerData\Content\selectize\css\selectize.bootstrap2.css" />
+    <Content Include="Areas\CustomerData\Content\selectize\css\selectize.bootstrap3.css" />
+    <Content Include="Areas\CustomerData\Content\selectize\css\selectize.css" />
+    <Content Include="Areas\CustomerData\Content\selectize\css\selectize.default.css" />
+    <Content Include="Areas\CustomerData\Content\selectize\css\selectize.legacy.css" />
+    <Content Include="Areas\CustomerData\Content\selectize\css\stylesheet.css" />
+    <Content Include="Areas\CustomerData\Content\selectize\js\selectize.js" />
+    <Content Include="Areas\CustomerData\Content\selectize\js\selectize.min.js" />
+    <Content Include="Areas\CustomerData\Views\Customer\Index.aspx" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-3.3.6\css\bootstrap-theme.css" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-3.3.6\css\bootstrap-theme.min.css" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-3.3.6\css\bootstrap.css" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-3.3.6\css\bootstrap.min.css" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-3.3.6\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-3.3.6\js\bootstrap-phone.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-3.3.6\js\bootstrap.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-3.3.6\js\bootstrap.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-3.3.6\js\dropdown.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-3.3.6\js\npm.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\css\bootstrap-table.css" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\css\bootstrap-table.min.css" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\bootstrap-table-locale-all.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\bootstrap-table-locale-all.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\bootstrap-table.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\bootstrap-table.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-af-ZA.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-af-ZA.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-ar-SA.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-ar-SA.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-ca-ES.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-ca-ES.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-cs-CZ.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-cs-CZ.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-da-DK.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-da-DK.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-de-DE.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-de-DE.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-el-GR.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-el-GR.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-en-US.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-en-US.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-es-AR.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-es-AR.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-es-CR.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-es-CR.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-es-ES.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-es-ES.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-es-MX.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-es-MX.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-es-NI.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-es-NI.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-es-SP.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-es-SP.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-et-EE.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-et-EE.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-fa-IR.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-fa-IR.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-fr-BE.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-fr-BE.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-fr-FR.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-fr-FR.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-he-IL.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-he-IL.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-hr-HR.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-hr-HR.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-hu-HU.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-hu-HU.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-it-IT.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-it-IT.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-ja-JP.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-ja-JP.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-ka-GE.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-ka-GE.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-ko-KR.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-ko-KR.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-ms-MY.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-ms-MY.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-nb-NO.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-nb-NO.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-nl-NL.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-nl-NL.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-pl-PL.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-pl-PL.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-pt-BR.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-pt-BR.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-pt-PT.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-pt-PT.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-ro-RO.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-ro-RO.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-ru-RU.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-ru-RU.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-sk-SK.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-sk-SK.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-sv-SE.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-sv-SE.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-th-TH.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-th-TH.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-tr-TR.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-tr-TR.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-uk-UA.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-uk-UA.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-ur-PK.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-ur-PK.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-vi-VN.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-vi-VN.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-zh-CN.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-zh-CN.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-zh-TW.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-table\js\locale\bootstrap-table-zh-TW.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-validator\css\bootstrapValidator.min.css" />
+    <Content Include="Areas\NoticeRecharge\Content\bootstrap-validator\js\bootstrapValidator.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\css\Custom.css" />
+    <Content Include="Areas\NoticeRecharge\Content\js\jquery-1.11.3.min.js" />
+    <Content Include="Areas\NoticeRecharge\Content\selectize\css\normalize.css" />
+    <Content Include="Areas\NoticeRecharge\Content\selectize\css\selectize.bootstrap2.css" />
+    <Content Include="Areas\NoticeRecharge\Content\selectize\css\selectize.bootstrap3.css" />
+    <Content Include="Areas\NoticeRecharge\Content\selectize\css\selectize.css" />
+    <Content Include="Areas\NoticeRecharge\Content\selectize\css\selectize.default.css" />
+    <Content Include="Areas\NoticeRecharge\Content\selectize\css\selectize.legacy.css" />
+    <Content Include="Areas\NoticeRecharge\Content\selectize\css\stylesheet.css" />
+    <Content Include="Areas\NoticeRecharge\Content\selectize\js\selectize.js" />
+    <Content Include="Areas\NoticeRecharge\Content\selectize\js\selectize.min.js" />
+    <Content Include="Areas\NoticeRecharge\Views\User\Edit.aspx" />
+    <Content Include="Areas\NoticeRecharge\Views\User\Index.aspx" />
+    <Content Include="Areas\NoticeRecharge\Views\User\New.aspx" />
+    <Content Include="Areas\RoutePreparation\Content\Components\Bootstrap\Css\Bootstrap-carousel.css" />
+    <Content Include="Areas\RoutePreparation\Content\Components\Bootstrap\Scripts\Bootstrap-carousel.js" />
+    <Content Include="Areas\RoutePreparation\Content\Components\Bootstrap\Scripts\Bootstrap-phone.min.js" />
+    <Content Include="Areas\RoutePreparation\Content\Components\InfoBubble\Scripts\InfoBubble.min.js" />
+    <Content Include="Areas\RoutePreparation\Content\Components\MultiSelectize\sol.css" />
+    <Content Include="Areas\RoutePreparation\Content\Components\MultiSelectize\sol.js" />
+    <Content Include="Areas\RoutePreparation\Content\Css\MultimediaModule.css" />
+    <Content Include="Areas\RoutePreparation\Content\Images\Icons\Biohazard.png" />
+    <Content Include="Areas\RoutePreparation\Content\Images\Pointers\Blue.png" />
+    <Content Include="Areas\RoutePreparation\Content\Images\Pointers\Green.png" />
+    <Content Include="Areas\RoutePreparation\Content\Images\Pointers\Orange.png" />
+    <Content Include="Areas\RoutePreparation\Content\Images\Pointers\Red.png" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\Campaign\Dates.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\Campaign\MultimediaFileUploader.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\Campaign\New.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\Campaign\Edit.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\Campaign\Form.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\Campaign\Index.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\Campaign\MultimediaModalFilter.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\Campaign\MultimediaModalModule.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\Campaign\MultimediaModule.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\CheckList\Form.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\CampaignReply\Index.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\ChecklistReply\Index.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\CheckList\Index.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\CoolerConfigurationReply\Index.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\Contact\Form.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\Contact\Index.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\Alert\Form.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\Alert\Index.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\CoolerConfiguration\Index.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\CoolerConfigurationTemplate\Form.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\CoolerConfigurationTemplate\Index.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\CheckListTemplate\Form.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\CheckListTemplate\Index.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\CampaignTemplate\Form.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\CampaignTemplate\Index.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\SosAlert\Index.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\Manager\Form.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\Manager\Index.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\Incident\Index.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\Incidence\Index.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\CoolerConfiguration\Form.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\Cooler\Index.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\Customer\Index.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\Map.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\Survey\ApplyAssignedSurvey.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\TheoreticalMileage\FileManager.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\WorkshopReply\Index.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\Filters.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\Survey\Form.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\Workshop\Form.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\Workshop\Index.js" />
+    <Content Include="Areas\RoutePreparation\Views\CampaignReply\Detail.aspx" />
+    <Content Include="Areas\RoutePreparation\Views\CampaignTemplate\Edit.aspx" />
+    <Content Include="Areas\RoutePreparation\Views\CampaignTemplate\Index.aspx" />
+    <Content Include="Areas\RoutePreparation\Views\CampaignTemplate\New.aspx" />
+    <Content Include="Areas\RoutePreparation\Views\CampaignTemplate\_Filters.ascx" />
+    <Content Include="Areas\RoutePreparation\Views\CampaignTemplate\_Form.ascx" />
+    <Content Include="Areas\RoutePreparation\Views\CampaignTemplate\_Multimedia.ascx" />
+    <Content Include="Areas\RoutePreparation\Views\Campaign\_Dates.ascx" />
+    <Content Include="Areas\RoutePreparation\Views\Campaign\_Templates.ascx" />
+    <Content Include="Areas\RoutePreparation\Views\Campaign\_Filters.ascx" />
+    <Content Include="Areas\RoutePreparation\Views\Campaign\_Multimedia.ascx" />
+    <Content Include="Areas\RoutePreparation\Views\Campaign\Edit.aspx" />
+    <Content Include="Areas\RoutePreparation\Views\Campaign\New.aspx" />
+    <Content Include="Areas\RoutePreparation\Views\Campaign\_Form.ascx" />
+    <Content Include="Areas\RoutePreparation\Views\Campaign\_MultimediaModal.ascx" />
+    <Content Include="Areas\RoutePreparation\Views\ChecklistReply\Detail.aspx" />
+    <Content Include="Areas\RoutePreparation\Views\CheckListTemplate\Edit.aspx" />
+    <Content Include="Areas\RoutePreparation\Views\CheckListTemplate\Index.aspx" />
+    <Content Include="Areas\RoutePreparation\Views\CheckListTemplate\New.aspx" />
+    <Content Include="Areas\RoutePreparation\Views\CheckListTemplate\_Filters.ascx" />
+    <Content Include="Areas\RoutePreparation\Views\CheckListTemplate\_Form.ascx" />
+    <Content Include="Areas\RoutePreparation\Views\Shared\_Branches.ascx" />
+    <Content Include="Areas\RoutePreparation\Views\CheckList\_Templates.ascx" />
+    <Content Include="Areas\RoutePreparation\Views\CoolerConfiguration\_Templates.ascx" />
+    <Content Include="Areas\RoutePreparation\Views\Shared\_EditDatesModal.ascx" />
+    <Content Include="Areas\RoutePreparation\Views\CheckList\Edit.aspx" />
+    <Content Include="Areas\RoutePreparation\Views\CheckList\Index.aspx" />
+    <Content Include="Areas\RoutePreparation\Views\CheckList\New.aspx" />
+    <Content Include="Areas\RoutePreparation\Views\CampaignReply\Index.aspx" />
+    <Content Include="Areas\RoutePreparation\Views\CampaignReply\_Filters.ascx" />
+    <Content Include="Areas\RoutePreparation\Views\ChecklistReply\Index.aspx" />
+    <Content Include="Areas\RoutePreparation\Views\ChecklistReply\_Filters.ascx" />
+    <Content Include="Areas\RoutePreparation\Views\CheckList\_Filters.ascx" />
+    <Content Include="Areas\RoutePreparation\Views\CheckList\_Form.ascx" />
+    <Content Include="Areas\RoutePreparation\Views\CoolerConfigurationReply\Detail.aspx" />
+    <Content Include="Areas\RoutePreparation\Views\CoolerConfigurationReply\Index.aspx" />
+    <Content Include="Areas\RoutePreparation\Views\CoolerConfigurationReply\_Filters.ascx" />
+    <Content Include="Areas\RoutePreparation\Views\Contact\Edit.aspx" />
+    <Content Include="Areas\RoutePreparation\Views\Contact\Index.aspx" />
+    <Content Include="Areas\RoutePreparation\Views\Contact\New.aspx" />
+    <Content Include="Areas\RoutePreparation\Views\Contact\_Filters.ascx" />
+    <Content Include="Areas\RoutePreparation\Views\Contact\_Form.ascx" />
+    <Content Include="Areas\RoutePreparation\Views\Alert\Edit.aspx" />
+    <Content Include="Areas\RoutePreparation\Views\Alert\Index.aspx" />
+    <Content Include="Areas\RoutePreparation\Views\Alert\New.aspx" />
+    <Content Include="Areas\RoutePreparation\Views\Alert\_Filters.ascx" />
+    <Content Include="Areas\RoutePreparation\Views\Alert\_Form.ascx" />
+    <Content Include="Areas\RoutePreparation\Views\CoolerConfiguration\Index.aspx" />
+    <Content Include="Areas\RoutePreparation\Views\CoolerConfiguration\_Filters.ascx" />
+    <Content Include="Areas\RoutePreparation\Views\CoolerConfigurationTemplate\Edit.aspx" />
+    <Content Include="Areas\RoutePreparation\Views\CoolerConfigurationTemplate\Index.aspx" />
+    <Content Include="Areas\RoutePreparation\Views\CoolerConfigurationTemplate\New.aspx" />
+    <Content Include="Areas\RoutePreparation\Views\CoolerConfigurationTemplate\_Filters.ascx" />
+    <Content Include="Areas\RoutePreparation\Views\CoolerConfigurationTemplate\_Form.ascx" />
+    <Content Include="Areas\RoutePreparation\Views\System\Version.aspx" />
+    <Content Include="Areas\RoutePreparation\Views\Shared\_UrlActions.ascx" />
+    <Content Include="Areas\RoutePreparation\Views\SosAlert\Index.aspx" />
+    <Content Include="Areas\RoutePreparation\Views\SosAlert\_Filters.ascx" />
+    <Content Include="Areas\RoutePreparation\Views\Manager\Edit.aspx" />
+    <Content Include="Areas\RoutePreparation\Views\Manager\Index.aspx" />
+    <Content Include="Areas\RoutePreparation\Views\Manager\New.aspx" />
+    <Content Include="Areas\RoutePreparation\Views\Manager\_Filters.ascx" />
+    <Content Include="Areas\RoutePreparation\Views\Manager\_Form.ascx" />
+    <Content Include="Areas\RoutePreparation\Views\Incident\Index.aspx" />
+    <Content Include="Areas\RoutePreparation\Views\Incidence\Index.aspx" />
+    <Content Include="Areas\RoutePreparation\Views\Incidence\_Filters.ascx" />
+    <Content Include="Areas\RoutePreparation\Views\CoolerConfiguration\Edit.aspx" />
+    <Content Include="Areas\RoutePreparation\Views\Customer\Index.aspx" />
+    <Content Include="Areas\RoutePreparation\Views\CoolerConfiguration\New.aspx" />
+    <Content Include="Areas\RoutePreparation\Views\Customer\_Filters.ascx" />
+    <Content Include="Areas\RoutePreparation\Views\CoolerConfiguration\_Form.ascx" />
+    <Content Include="Areas\RoutePreparation\Views\Cooler\Index.aspx" />
+    <Content Include="Areas\RoutePreparation\Views\Cooler\_Filters.ascx" />
+    <Content Include="Areas\RoutePreparation\Views\Shared\_ApplyAssignedSurvey.ascx" />
+    <Content Include="Areas\RoutePreparation\Views\SosAlert\_NewComment.ascx" />
+    <Content Include="Areas\RoutePreparation\Views\WorkshopReply\Detail.aspx" />
+    <Content Include="Areas\RoutePreparation\Views\WorkshopReply\Index.aspx" />
+    <Content Include="Areas\RoutePreparation\Views\WorkshopReply\_Filters.ascx" />
+    <Content Include="Areas\RoutePreparation\Views\Survey\_Answer.ascx" />
+    <Content Include="Areas\RoutePreparation\Views\Workshop\_Filters.ascx" />
+    <Content Include="Areas\RoutePreparation\Views\Survey\_Question.ascx" />
+    <Content Include="Areas\RoutePreparation\Views\Survey\_Form.ascx" />
+    <Content Include="Areas\RoutePreparation\Views\Workshop\Edit.aspx" />
+    <Content Include="Areas\RoutePreparation\Views\Workshop\Index.aspx" />
+    <Content Include="Areas\RoutePreparation\Views\Workshop\New.aspx" />
+    <Content Include="Areas\RoutePreparation\Views\Workshop\_Form.ascx" />
+    <Content Include="Areas\RoutePreparation\Content\Css\Custom.css" />
+    <Content Include="Areas\RoutePreparation\Content\Images\Files\PDF.png" />
+    <Content Include="Areas\RoutePreparation\Content\Images\Files\Txt.png" />
+    <Content Include="Areas\RoutePreparation\Content\Images\Files\Unknown.png" />
+    <Content Include="Areas\RoutePreparation\Content\Images\Files\Video.png" />
+    <Content Include="Areas\RoutePreparation\Content\Components\Bootstrap\Css\Bootstrap-touchspin.min.css" />
+    <Content Include="Areas\RoutePreparation\Content\Components\Bootstrap\Scripts\Bootstrap-touchspin.min.js" />
+    <Content Include="Areas\RoutePreparation\Content\Components\DateRangePicker\Css\daterangepicker.css" />
+    <Content Include="Areas\RoutePreparation\Content\Components\DateRangePicker\Scripts\daterangepicker.js" />
+    <Content Include="Areas\RoutePreparation\Content\Components\DateRangePicker\Scripts\moment.min.js" />
+    <Content Include="Areas\RoutePreparation\Content\Components\LoadTemplate\Scripts\LoadTemplate.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\Selectize.js" />
+    <Content Include="Areas\RoutePreparation\Views\Campaign\Index.aspx" />
+    <Content Include="Areas\RoutePreparation\Content\Components\BootstrapTable\Css\bootstrap-table.min.css" />
+    <Content Include="Areas\RoutePreparation\Content\Components\BootstrapTable\Scripts\BootstrapTable.min.js" />
+    <Content Include="Areas\RoutePreparation\Content\Components\Bootstrap\Css\Bootstrap-dialog.min.css" />
+    <Content Include="Areas\RoutePreparation\Content\Components\Bootstrap\Css\Bootstrap-fonts.min.css" />
+    <Content Include="Areas\RoutePreparation\Content\Components\Bootstrap\Css\Bootstrap.min.css" />
+    <Content Include="Areas\RoutePreparation\Content\Components\Bootstrap\Fonts\fontawesome-webfont.svg" />
+    <Content Include="Areas\RoutePreparation\Content\Components\Bootstrap\Scripts\Bootstrap-dialog.min.js" />
+    <Content Include="Areas\RoutePreparation\Content\Components\Bootstrap\Scripts\Bootstrap-maxlength.min.js" />
+    <Content Include="Areas\RoutePreparation\Content\Components\Bootstrap\Scripts\Bootstrap-number.min.js" />
+    <Content Include="Areas\RoutePreparation\Content\Components\Bootstrap\Scripts\Bootstrap-validator.min.js" />
+    <Content Include="Areas\RoutePreparation\Content\Components\Bootstrap\Scripts\Bootstrap.min.js" />
+    <Content Include="Areas\RoutePreparation\Content\Components\Formatter\Scripts\Formatter.min.js" />
+    <Content Include="Areas\RoutePreparation\Content\Components\JQuery\Css\JQuery-ui.css" />
+    <Content Include="Areas\RoutePreparation\Content\Components\JQuery\Scripts\JQuery.min.js" />
+    <Content Include="Areas\RoutePreparation\Content\Components\Messenger\Css\Messenger.min.css" />
+    <Content Include="Areas\RoutePreparation\Content\Components\Messenger\Scripts\Messenger.min.js" />
+    <Content Include="Areas\RoutePreparation\Content\Components\Required-field\Css\Required-field.min.css" />
+    <Content Include="Areas\RoutePreparation\Content\Components\Selectize\Css\Selectize.min.css" />
+    <Content Include="Areas\RoutePreparation\Content\Components\Selectize\Scripts\Selectize.min.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\General.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\Table.js" />
+    <Content Include="Areas\RoutePreparation\Content\Scripts\Validator.js" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.bootstrap.css" />
+    <Content Include="Content\DataTables\css\autoFill.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\autoFill.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.dataTables.css" />
+    <Content Include="Content\DataTables\css\autoFill.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.foundation.css" />
+    <Content Include="Content\DataTables\css\autoFill.foundation.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.jqueryui.css" />
+    <Content Include="Content\DataTables\css\autoFill.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\autoFill.semanticui.css" />
+    <Content Include="Content\DataTables\css\autoFill.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\buttons.bootstrap.css" />
+    <Content Include="Content\DataTables\css\buttons.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\buttons.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\buttons.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\buttons.dataTables.css" />
+    <Content Include="Content\DataTables\css\buttons.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\buttons.foundation.css" />
+    <Content Include="Content\DataTables\css\buttons.foundation.min.css" />
+    <Content Include="Content\DataTables\css\buttons.jqueryui.css" />
+    <Content Include="Content\DataTables\css\buttons.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\buttons.semanticui.css" />
+    <Content Include="Content\DataTables\css\buttons.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.bootstrap.css" />
+    <Content Include="Content\DataTables\css\colReorder.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\colReorder.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.dataTables.css" />
+    <Content Include="Content\DataTables\css\colReorder.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.foundation.css" />
+    <Content Include="Content\DataTables\css\colReorder.foundation.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.jqueryui.css" />
+    <Content Include="Content\DataTables\css\colReorder.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\colReorder.semanticui.css" />
+    <Content Include="Content\DataTables\css\colReorder.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.bootstrap.css" />
+    <Content Include="Content\DataTables\css\dataTables.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.foundation.css" />
+    <Content Include="Content\DataTables\css\dataTables.foundation.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.jqueryui.css" />
+    <Content Include="Content\DataTables\css\dataTables.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.material.css" />
+    <Content Include="Content\DataTables\css\dataTables.material.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.semanticui.css" />
+    <Content Include="Content\DataTables\css\dataTables.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\dataTables.uikit.css" />
+    <Content Include="Content\DataTables\css\dataTables.uikit.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.bootstrap.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.dataTables.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.foundation.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.foundation.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.jqueryui.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.semanticui.css" />
+    <Content Include="Content\DataTables\css\fixedColumns.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.bootstrap.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.dataTables.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.foundation.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.foundation.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.jqueryui.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.semanticui.css" />
+    <Content Include="Content\DataTables\css\fixedHeader.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\jquery.dataTables.css" />
+    <Content Include="Content\DataTables\css\jquery.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\jquery.dataTables_themeroller.css" />
+    <Content Include="Content\DataTables\css\keyTable.bootstrap.css" />
+    <Content Include="Content\DataTables\css\keyTable.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\keyTable.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.dataTables.css" />
+    <Content Include="Content\DataTables\css\keyTable.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.foundation.css" />
+    <Content Include="Content\DataTables\css\keyTable.foundation.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.jqueryui.css" />
+    <Content Include="Content\DataTables\css\keyTable.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\keyTable.semanticui.css" />
+    <Content Include="Content\DataTables\css\keyTable.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\responsive.bootstrap.css" />
+    <Content Include="Content\DataTables\css\responsive.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\responsive.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\responsive.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\responsive.dataTables.css" />
+    <Content Include="Content\DataTables\css\responsive.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\responsive.foundation.css" />
+    <Content Include="Content\DataTables\css\responsive.foundation.min.css" />
+    <Content Include="Content\DataTables\css\responsive.jqueryui.css" />
+    <Content Include="Content\DataTables\css\responsive.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\responsive.semanticui.css" />
+    <Content Include="Content\DataTables\css\responsive.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\rowGroup.bootstrap.css" />
+    <Content Include="Content\DataTables\css\rowGroup.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\rowGroup.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\rowGroup.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\rowGroup.dataTables.css" />
+    <Content Include="Content\DataTables\css\rowGroup.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\rowGroup.foundation.css" />
+    <Content Include="Content\DataTables\css\rowGroup.foundation.min.css" />
+    <Content Include="Content\DataTables\css\rowGroup.jqueryui.css" />
+    <Content Include="Content\DataTables\css\rowGroup.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\rowGroup.semanticui.css" />
+    <Content Include="Content\DataTables\css\rowGroup.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.bootstrap.css" />
+    <Content Include="Content\DataTables\css\rowReorder.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\rowReorder.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.dataTables.css" />
+    <Content Include="Content\DataTables\css\rowReorder.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.foundation.css" />
+    <Content Include="Content\DataTables\css\rowReorder.foundation.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.jqueryui.css" />
+    <Content Include="Content\DataTables\css\rowReorder.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\rowReorder.semanticui.css" />
+    <Content Include="Content\DataTables\css\rowReorder.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\scroller.bootstrap.css" />
+    <Content Include="Content\DataTables\css\scroller.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\scroller.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\scroller.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\scroller.dataTables.css" />
+    <Content Include="Content\DataTables\css\scroller.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\scroller.foundation.css" />
+    <Content Include="Content\DataTables\css\scroller.foundation.min.css" />
+    <Content Include="Content\DataTables\css\scroller.jqueryui.css" />
+    <Content Include="Content\DataTables\css\scroller.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\scroller.semanticui.css" />
+    <Content Include="Content\DataTables\css\scroller.semanticui.min.css" />
+    <Content Include="Content\DataTables\css\select.bootstrap.css" />
+    <Content Include="Content\DataTables\css\select.bootstrap.min.css" />
+    <Content Include="Content\DataTables\css\select.bootstrap4.css" />
+    <Content Include="Content\DataTables\css\select.bootstrap4.min.css" />
+    <Content Include="Content\DataTables\css\select.dataTables.css" />
+    <Content Include="Content\DataTables\css\select.dataTables.min.css" />
+    <Content Include="Content\DataTables\css\select.foundation.css" />
+    <Content Include="Content\DataTables\css\select.foundation.min.css" />
+    <Content Include="Content\DataTables\css\select.jqueryui.css" />
+    <Content Include="Content\DataTables\css\select.jqueryui.min.css" />
+    <Content Include="Content\DataTables\css\select.semanticui.css" />
+    <Content Include="Content\DataTables\css\select.semanticui.min.css" />
+    <Content Include="Content\DataTables\images\details_close.png" />
+    <Content Include="Content\DataTables\images\details_open.png" />
+    <Content Include="Content\DataTables\images\sort_asc.png" />
+    <Content Include="Content\DataTables\images\sort_asc_disabled.png" />
+    <Content Include="Content\DataTables\images\sort_both.png" />
+    <Content Include="Content\DataTables\images\sort_desc.png" />
+    <Content Include="Content\DataTables\images\sort_desc_disabled.png" />
+    <Content Include="Content\DataTables\swf\flashExport.swf" />
+    <Content Include="Content\jquery-form\jquery.form.min.js" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Infrastructure\Libreries\QROpeSystems.dll" />
+    <Content Include="Content\DataTables\css\semanticui.scss" />
+    <Content Include="Content\DataTables\css\mixins.scss" />
+    <Content Include="Content\DataTables\css\common.scss" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\DataTables\dataTable.language.spanish.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <None Include="Scripts\jquery-1.7-vsdoc.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap.js" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\autoFill.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.foundation.js" />
+    <Content Include="Scripts\DataTables\autoFill.foundation.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.jqueryui.js" />
+    <Content Include="Scripts\DataTables\autoFill.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\autoFill.semanticui.js" />
+    <Content Include="Scripts\DataTables\autoFill.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\buttons.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\buttons.colVis.js" />
+    <Content Include="Scripts\DataTables\buttons.colVis.min.js" />
+    <Content Include="Scripts\DataTables\buttons.flash.js" />
+    <Content Include="Scripts\DataTables\buttons.flash.min.js" />
+    <Content Include="Scripts\DataTables\buttons.foundation.js" />
+    <Content Include="Scripts\DataTables\buttons.foundation.min.js" />
+    <Content Include="Scripts\DataTables\buttons.html5.js" />
+    <Content Include="Scripts\DataTables\buttons.html5.min.js" />
+    <Content Include="Scripts\DataTables\buttons.jqueryui.js" />
+    <Content Include="Scripts\DataTables\buttons.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\buttons.print.js" />
+    <Content Include="Scripts\DataTables\buttons.print.min.js" />
+    <Content Include="Scripts\DataTables\buttons.semanticui.js" />
+    <Content Include="Scripts\DataTables\buttons.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.autoFill.js" />
+    <Content Include="Scripts\DataTables\dataTables.autoFill.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\dataTables.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.buttons.js" />
+    <Content Include="Scripts\DataTables\dataTables.buttons.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.colReorder.js" />
+    <Content Include="Scripts\DataTables\dataTables.colReorder.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedColumns.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedColumns.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedHeader.js" />
+    <Content Include="Scripts\DataTables\dataTables.fixedHeader.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.foundation.js" />
+    <Content Include="Scripts\DataTables\dataTables.foundation.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.jqueryui.js" />
+    <Content Include="Scripts\DataTables\dataTables.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.keyTable.js" />
+    <Content Include="Scripts\DataTables\dataTables.keyTable.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.material.js" />
+    <Content Include="Scripts\DataTables\dataTables.material.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.responsive.js" />
+    <Content Include="Scripts\DataTables\dataTables.responsive.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.rowGroup.js" />
+    <Content Include="Scripts\DataTables\dataTables.rowGroup.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.rowReorder.js" />
+    <Content Include="Scripts\DataTables\dataTables.rowReorder.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.scroller.js" />
+    <Content Include="Scripts\DataTables\dataTables.scroller.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.select.js" />
+    <Content Include="Scripts\DataTables\dataTables.select.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.semanticui.js" />
+    <Content Include="Scripts\DataTables\dataTables.semanticui.min.js" />
+    <Content Include="Scripts\DataTables\dataTables.uikit.js" />
+    <Content Include="Scripts\DataTables\dataTables.uikit.min.js" />
+    <Content Include="Scripts\DataTables\jquery.dataTables.js" />
+    <Content Include="Scripts\DataTables\jquery.dataTables.min.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap.min.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap4.js" />
+    <Content Include="Scripts\DataTables\responsive.bootstrap4.min.js" />
+    <Content Include="Scripts\DataTables\responsive.foundation.js" />
+    <Content Include="Scripts\DataTables\responsive.foundation.min.js" />
+    <Content Include="Scripts\DataTables\responsive.jqueryui.js" />
+    <Content Include="Scripts\DataTables\responsive.jqueryui.min.js" />
+    <Content Include="Scripts\DataTables\responsive.semanticui.js" />
+    <Content Include="Scripts\DataTables\responsive.semanticui.min.js" />
+    <Content Include="Scripts\jquery-1.7.js" />
+    <Content Include="Scripts\jquery-1.7.min.js" />
+    <Content Include="Scripts\jszip.js" />
+    <Content Include="Scripts\jszip.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Views\Configuracion\Kilometraje.aspx" />
+    <Content Include="Views\Configuracion\MileageTable.html" />
+    <Content Include="Views\Kilometraje\Index.aspx" />
+    <Content Include="Views\Shared\_Alerts.ascx" />
+    <Content Include="Content\bootstrap\css\bootstrap-responsive.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-responsive.min.css" />
+    <Content Include="Content\bootstrap\css\bootstrap-timepicker.min.css" />
+    <Content Include="Content\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\bootstrap\css\selectize.bootstrap2.css" />
+    <Content Include="Content\bootstrap\img\glyphicons-halflings-white.png" />
+    <Content Include="Content\bootstrap\img\glyphicons-halflings.png" />
+    <Content Include="Content\bootstrap\img\loader.gif" />
+    <Content Include="Content\bootstrap\img\logo.png.png" />
+    <Content Include="Content\bootstrap\img\Logo18.png" />
+    <Content Include="Content\bootstrap\img\logo18_.png" />
+    <Content Include="Content\bootstrap\js\bootbox.min.js" />
+    <Content Include="Content\bootstrap\js\bootstrap-paginator.min.js" />
+    <Content Include="Content\bootstrap\js\bootstrap-popover.js" />
+    <Content Include="Content\bootstrap\js\bootstrap-timepicker.min.js" />
+    <Content Include="Content\bootstrap\js\bootstrap-tooltip.js" />
+    <Content Include="Content\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\bootstrap\js\jquery-1.8.3.min.js" />
+    <Content Include="Content\bootstrap\js\jquery.bootpag.min.js" />
+    <Content Include="Content\bootstrap\js\jquery.form.js" />
+    <Content Include="Content\bootstrap\js\jquery.tmpl.js" />
+    <Content Include="Content\bootstrap\js\jquery.validate.js" />
+    <Content Include="Content\bootstrap\js\selectize.js" />
+    <Content Include="Content\jquery_ui\css\redmon\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\jquery_ui\css\redmon\images\ui-bg_flat_100_002d45_40x100.png" />
+    <Content Include="Content\jquery_ui\css\redmon\images\ui-bg_flat_55_fef9cd_40x100.png" />
+    <Content Include="Content\jquery_ui\css\redmon\images\ui-bg_flat_65_c9ddfd_40x100.png" />
+    <Content Include="Content\jquery_ui\css\redmon\images\ui-bg_flat_75_e8e8e8_40x100.png" />
+    <Content Include="Content\jquery_ui\css\redmon\images\ui-bg_flat_75_ffe866_40x100.png" />
+    <Content Include="Content\jquery_ui\css\redmon\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\jquery_ui\css\redmon\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\jquery_ui\css\redmon\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\jquery_ui\css\redmon\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\jquery_ui\css\redmon\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\jquery_ui\css\redmon\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\jquery_ui\css\redmon\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\jquery_ui\css\redmon\images\ui-icons_ffffff_256x240.png" />
+    <Content Include="Content\jquery_ui\css\redmon\jquery-ui-1.9.2.custom.css" />
+    <Content Include="Content\jquery_ui\css\redmon\jquery-ui-1.9.2.custom.min.css" />
+    <Content Include="Content\jquery_ui\js\jquery-1.8.3.js" />
+    <Content Include="Content\jquery_ui\js\jquery-ui-1.9.2.custom.js" />
+    <Content Include="Content\jquery_ui\js\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="Content\jtable\jquery.jtable.js" />
+    <Content Include="Content\jtable\jquery.jtable.min.js" />
+    <Content Include="Content\jtable\themes\add.png" />
+    <Content Include="Content\jtable\themes\close.png" />
+    <Content Include="Content\jtable\themes\column-asc.png" />
+    <Content Include="Content\jtable\themes\column-desc.png" />
+    <Content Include="Content\jtable\themes\column-sortable.png" />
+    <Content Include="Content\jtable\themes\delete.png" />
+    <Content Include="Content\jtable\themes\edit.png" />
+    <Content Include="Content\jtable\themes\jtable_metro_base.css" />
+    <Content Include="Content\jtable\themes\jtable_metro_base.min.css" />
+    <Content Include="Content\jtable\themes\metro\blue\jtable.css" />
+    <Content Include="Content\jtable\themes\metro\blue\jtable.min.css" />
+    <Content Include="Content\jtable\themes\metro\blue\loading.gif" />
+    <Content Include="Content\jtable\themes\workbycloud\add.png" />
+    <Content Include="Content\jtable\themes\workbycloud\close.png" />
+    <Content Include="Content\jtable\themes\workbycloud\column-asc.png" />
+    <Content Include="Content\jtable\themes\workbycloud\column-desc.png" />
+    <Content Include="Content\jtable\themes\workbycloud\column-sortable.png" />
+    <Content Include="Content\jtable\themes\workbycloud\delete.png" />
+    <Content Include="Content\jtable\themes\workbycloud\edit.png" />
+    <Content Include="Content\jtable\themes\workbycloud\jtable.css" />
+    <Content Include="Content\Selectize\Css\Selectize.min.css" />
+    <Content Include="Content\Selectize\Scripts\Selectize.min.js" />
+    <Content Include="Content\util\functionLibrary.js" />
+    <Content Include="Content\util\Journey.js" />
+    <Content Include="Content\util\Process.js" />
+    <Content Include="Content\util\md5.js" />
+    <Content Include="Global.asax" />
+    <Content Include="Reports\ConcentrateOrdersReport.aspx" />
+    <Content Include="Reports\ConcentrateSalesReport.aspx" />
+    <Content Include="Reports\CustomerBinnacleFailed.aspx" />
+    <Content Include="Reports\CustomerScannedReport.aspx" />
+    <Content Include="Reports\ConcentrateDeliveryReport.aspx" />
+    <Content Include="Reports\ConcentrateProductivity.aspx" />
+    <Content Include="Content\util\json2.js" />
+    <Content Include="Reports\PriceList.aspx" />
+    <Content Include="Reports\Report.aspx" />
+    <Content Include="Reports\StockBasedDelivery.aspx" />
+    <Content Include="Reports\StockProduct.aspx" />
+    <Content Include="Reports\WorkLoadUser.aspx" />
+    <Content Include="Views\Audit\Audits.aspx" />
+    <Content Include="Views\Audit\Extend.aspx" />
+    <Content Include="Views\Audit\Create.aspx" />
+    <Content Include="Views\Audit\Index.aspx" />
+    <Content Include="Views\Audit\Users.aspx" />
+    <Content Include="Views\Catalogo\Index.aspx" />
+    <Content Include="Views\Cliente\GridClientes.ascx" />
+    <Content Include="Views\Configuracion\Cargar.aspx" />
+    <Content Include="Views\Configuracion\Cierre.aspx" />
+    <Content Include="Views\Configuracion\Correo.aspx" />
+    <Content Include="Views\Configuracion\Cuenta.aspx" />
+    <Content Include="Views\Configuracion\Descargar.aspx" />
+    <Content Include="Views\Configuracion\Importar.aspx" />
+    <Content Include="Views\Configuracion\Index.aspx" />
+    <Content Include="Views\Configuracion\Licencia.aspx" />
+    <Content Include="Views\Configuracion\Servicios.aspx" />
+    <Content Include="Views\Jornada\Index.aspx" />
+    <Content Include="Views\Precio\GridPrecios.ascx" />
+    <Content Include="Views\Precio\Detalles.aspx" />
+    <Content Include="Views\Procesos\Index.aspx" />
+    <Content Include="Views\Producto\GridProductos.ascx" />
+    <Content Include="Views\ReferenciaEntrega\Index.aspx" />
+    <Content Include="Views\Reporte\Index.aspx" />
+    <Content Include="Views\Reporte\Pedidos.aspx" />
+    <Content Include="Views\Reporte\Ventas.aspx" />
+    <Content Include="Views\Usuario\GridActivos.ascx" />
+    <Content Include="Views\Usuario\GridDisponibles.ascx" />
+    <Content Include="Views\Usuario\Index.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\jquery-1.4.1.js" />
+    <Content Include="Scripts\jquery-1.4.1.min.js" />
+    <Content Include="Scripts\jquery-1.4.1-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\MicrosoftAjax.js" />
+    <Content Include="Scripts\MicrosoftAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.js" />
+    <Content Include="Scripts\MicrosoftMvcAjax.debug.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.js" />
+    <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
+    <Content Include="Views\Account\ChangePassword.aspx" />
+    <Content Include="Views\Account\ChangePasswordSuccess.aspx" />
+    <Content Include="Views\Account\LogOn.aspx" />
+    <Content Include="Views\Account\Register.aspx" />
+    <Content Include="Views\Home\About.aspx" />
+    <Content Include="Views\Home\Index.aspx" />
+    <Content Include="Views\Shared\Error.aspx" />
+    <Content Include="Views\Shared\LogOnUserControl.ascx" />
+    <Content Include="Views\Shared\Site.Master" />
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\QRCobratario.ashx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\Vacio.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AppSettingsSource.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Areas\RoutePreparation\Views\Web.config" />
+    <None Include="Areas\CustomerData\Content\bootstrap-3.3.6\css\bootstrap-theme.css.map" />
+    <None Include="Areas\CustomerData\Content\bootstrap-3.3.6\css\bootstrap-theme.min.css.map" />
+    <None Include="Areas\CustomerData\Content\bootstrap-3.3.6\css\bootstrap.css.map" />
+    <None Include="Areas\CustomerData\Content\bootstrap-3.3.6\css\bootstrap.min.css.map" />
+    <None Include="Areas\CustomerData\Content\bootstrap-3.3.6\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Areas\CustomerData\Content\bootstrap-3.3.6\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="Areas\CustomerData\Content\bootstrap-3.3.6\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Areas\CustomerData\Content\bootstrap-3.3.6\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Areas\CustomerData\Views\Web.config" />
+    <None Include="Areas\NoticeRecharge\Content\bootstrap-3.3.6\css\bootstrap-theme.css.map" />
+    <None Include="Areas\NoticeRecharge\Content\bootstrap-3.3.6\css\bootstrap-theme.min.css.map" />
+    <None Include="Areas\NoticeRecharge\Content\bootstrap-3.3.6\css\bootstrap.css.map" />
+    <None Include="Areas\NoticeRecharge\Content\bootstrap-3.3.6\css\bootstrap.min.css.map" />
+    <Content Include="Areas\NoticeRecharge\Views\Web.config" />
+    <None Include="Areas\NoticeRecharge\Content\bootstrap-3.3.6\fonts\glyphicons-halflings-regular.eot" />
+    <None Include="Areas\NoticeRecharge\Content\bootstrap-3.3.6\fonts\glyphicons-halflings-regular.ttf" />
+    <None Include="Areas\NoticeRecharge\Content\bootstrap-3.3.6\fonts\glyphicons-halflings-regular.woff" />
+    <None Include="Areas\NoticeRecharge\Content\bootstrap-3.3.6\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Areas\RoutePreparation\Content\Components\Bootstrap\Fonts\fontawesome-webfont.eot" />
+    <Content Include="Areas\RoutePreparation\Content\Components\Bootstrap\Fonts\fontawesome-webfont.ttf" />
+    <Content Include="Areas\RoutePreparation\Content\Components\Bootstrap\Fonts\fontawesome-webfont.woff" />
+    <Content Include="Areas\RoutePreparation\Content\Components\Bootstrap\Fonts\fontawesome-webfont.woff2" />
+    <Content Include="Areas\RoutePreparation\Content\Components\Bootstrap\Fonts\FontAwesome.otf" />
+    <None Include="Areas\RoutePreparation\Content\Components\MultiSelectize\LICENSE" />
+    <None Include="Areas\RoutePreparation\Content\Components\MultiSelectize\README.md" />
+    <None Include="ClassDiagram1.cd" />
+    <Content Include="Content\Descargas.ashx" />
+    <Content Include="ConnStrings.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Reports\Site1.Master" />
+    <None Include="Content\jtable\themes\jtable_metro_base.less" />
+    <None Include="Content\jtable\themes\metro\blue\jtable.less" />
+    <Content Include="packages.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <None Include="Properties\PublishProfiles\Profile1.pubxml" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Areas\RoutePreparation\Models\Dtos\Responses\" />
+    <Folder Include="Survey\Content\css\" />
+    <Folder Include="Views\Route\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">14.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v14.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!--To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target> -->
+  <Target Name="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(ProjectDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>58422</DevelopmentServerPort>
+          <DevelopmentServerVPath>/Portal/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Import Project="..\packages\AutoMapper.3.2.1-ci1000\tools\AutoMapper.targets" Condition="Exists('..\packages\AutoMapper.3.2.1-ci1000\tools\AutoMapper.targets')" />
+  <Import Project="..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+</Project>
