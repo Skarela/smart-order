@@ -492,19 +492,19 @@ namespace siteSmartOrder.Controllers
 
                                         if (!Regex.IsMatch(Convert.ToString(tablaExcel.Rows[i].ItemArray[1]), MileageRegex.RouteLength))
                                         {
-                                            tabla.DataWithErrors.Add(new MileageError { Row = i, Details = "Punto de Venta no debe contener más de 4 dígitos." });
+                                            tabla.DataWithErrors.Add(new MileageError { Row = i, Details = "Ruta no debe contener más de 4 dígitos." });
                                         }
 
                                         if (!Regex.IsMatch(Convert.ToString(tablaExcel.Rows[i].ItemArray[2]), MileageRegex.TravelsLength))
                                         {
-                                            tabla.DataWithErrors.Add(new MileageError { Row = i, Details = "Punto de Venta no debe contener más de 2 dígitos." });
+                                            tabla.DataWithErrors.Add(new MileageError { Row = i, Details = "Número de viajes no debe contener más de 2 dígitos." });
                                         }
 
                                         for (int j = 3; j < tablaExcel.Columns.Count; j++)
                                         {
                                             if (!Regex.IsMatch(Convert.ToString(tablaExcel.Rows[i].ItemArray[j]), MileageRegex.DayOfWeekLength))
                                             {
-                                                tabla.DataWithErrors.Add(new MileageError { Row = i, Details = "Punto de Venta no debe contener más de 3 dígitos." });
+                                                tabla.DataWithErrors.Add(new MileageError { Row = i, Details = "Kilometraje no debe contener más de 3 dígitos." });
                                             }
                                         }
 
